@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="application-name" content="TechChat">
+    <meta name="description" content="App for connecting">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>News</title>
+
+    <link rel="stylesheet" type="text/css" href="/styles/default.css">
+    <link rel="stylesheet" type="text/css" href="/styles/news.css">
+    <script type="text/javascript" src="/scripts/reload.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav id="nav_bar">
+
+      <ul>
+        <li><a href="/chat/">Chat</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/files/">Files</a></li>
+        <li>
+          <form action="/logout" method="post">
+            <button id="log_out" title="Log Out" type="submit" name="logout"></button>
+          </form>
+        </li>
+        <li>
+          <form action="/options" method="get">
+            <button id="options" title="Options" type="submit" name="options"></button>
+          </form>
+        </li>
+      </ul>
+
+    </nav>
+
+
+    <main>
+
+      <div class="container">
+
+        {{if .Admin}}
+
+          <form id="post_article" method="POST">
+
+            <div id="post_info">
+
+              <div id="header">
+                <label id="header_label" for="header">Header </label>
+                <input id="header_text" type="text" placeholder="Header" name="header"/>
+              </div>
+
+              <div id="importance">
+                <label id="importance_label" for="checkbox">Is important -</label>
+                <input id="importance_checkbox" type="checkbox" name="importance" value="1"/>
+              </div>
+
+            </div>
+
+            <textarea placeholder="Post text" name="text"></textarea>
+            <input type="submit" value="Post Article"/>
+
+          </form>
+
+        {{end}}
+
+        {{range .Articles}}
+          <article {{if .Importance}}class="important_article"{{else}}class="ordinary_article"{{end}}>
+            <h4>{{.Header}}</h4>
+            <p>
+              {{.Text}}
+            </p>
+            <div class="meta_info">
+              <p>{{.Author}}</p>
+              <p>{{.Date}}</p>
+            </div>
+          </article>
+        {{end}}
+
+      </div>
+
+    </main>
+
+    <footer id="main_footer">
+    </footer>
+
+  </body>
+
+</html>

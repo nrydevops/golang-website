@@ -1,0 +1,148 @@
+body {
+  margin-top: 13vh;
+}
+
+#post_article {
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  margin-bottom: 5rem;
+  padding-top: 1rem;
+  align-content: center;
+
+  box-sizing: border-box;
+}
+
+#post_article textarea {
+
+  display: flex;
+  max-width: 100%;
+  resize: none;
+  padding-top: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  height: 15vh;
+}
+
+#post_article input[type="submit"] {
+
+  display: flex;
+  height: 4vh;
+  width: 20%;
+  align-self: end;
+  margin-right: 0;
+  border: 0;
+  background-color: black;
+  color: white;
+}
+
+#post_article input[type="submit"]:hover {
+
+  background-color: red;
+}
+
+#post_article #post_info {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.8rem;
+}
+
+#post_article #post_info #header {
+
+  display: flex;
+  flex-direction: row;
+  align-self: start;
+}
+
+#post_article #post_info #header_label {
+
+  display: flex;
+  align-self: start;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
+}
+
+#post_article #post_info #header_text {
+
+  display: flex;
+  align-self: start;
+  height: 2vh;
+  font-family: "Roboto", sans-serif;
+}
+
+#post_article #post_info #importance {
+
+  display: flex;
+  flex-direction: row;
+  align-self: start;
+}
+
+#post_article #post_info #importance_label {
+
+  display: flex;
+  align-self: start;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+  margin-right: 0;
+}
+
+#post_article #post_info #importance_checkbox {
+
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+article {
+
+  position: relative;
+  margin: auto;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  align-content: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid black;
+
+  box-sizing: border-box;
+}
+
+.ordinary_article {
+
+  background: lightblue;
+}
+
+.important_article {
+
+  background: orangered;
+}
+
+.meta_info {
+
+  position: absolute;
+  display: block;
+  float: right;
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  line-height: 0.2rem;
+}
+
+.meta_info p {
+
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: darkblue;
+}

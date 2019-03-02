@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="application-name" content="TechChat">
+    <meta name="description" content="App for connecting">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>File</title>
+
+    <link rel="stylesheet" type="text/css" href="/styles/default.css">
+    <link rel="stylesheet" type="text/css" href="/styles/files.css">
+    <script type="text/javascript" src="/scripts/reload.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav id="nav_bar">
+
+      <ul>
+        <li><a href="/chat/">Chat</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/files/">Files</a></li>
+        <li>
+          <form action="/logout" method="post">
+            <button id="log_out" title="Log Out" type="submit" name="logout"></button>
+          </form>
+        </li>
+        <li>
+          <form action="/options" method="get">
+            <button id="options" title="Options" type="submit" name="options"></button>
+          </form>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div class="container">
+
+      {{if .Admin}}
+
+        <form id="upload_form" enctype="multipart/form-data" method="post">
+
+          <textarea id="description" name="description" placeholder="Description"></textarea>
+
+          <div id="upload">
+            <input id="upload_file" type="file" name="uploadfile" value="Browse" />
+            <input id="upload_button" type="submit" value="upload" />
+          </div>
+
+        </form>
+
+      {{end}}
+
+      {{range .Files}}
+
+        <div class="record">
+          <p class="text">{{.Description}}</p>
+          <a class="button" href="{{.Url}}" download>Download</a>
+          <div class="meta_info">
+            <p>Uploader: {{.Uploader}}</p>
+            <p>{{.Date}}</p>
+          </div>
+        </div>
+
+      {{end}}
+
+    </div>
+
+    <footer id="main_footer">
+    </footer>
+
+  </body>
+
+</html>
